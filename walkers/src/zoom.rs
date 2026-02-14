@@ -4,7 +4,7 @@ pub struct InvalidZoom;
 
 #[derive(Debug, Clone, Copy)]
 #[cfg_attr(feature = "serde", derive(::serde::Serialize, ::serde::Deserialize))]
-pub struct Zoom(f64);
+pub struct Zoom(pub f64);
 
 impl TryFrom<f64> for Zoom {
     type Error = InvalidZoom;

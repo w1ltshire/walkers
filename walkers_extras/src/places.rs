@@ -530,7 +530,7 @@ mod tests {
     fn projector_for_zoom(zoom: f64) -> (Rect, MapMemory, Projector) {
         let rect = Rect::from_min_size(Pos2::ZERO, Vec2::splat(512.0));
         let mut memory = MapMemory::default();
-        memory.set_zoom(zoom).unwrap();
+        memory.set_zoom(zoom);
         let projector = Projector::new(rect, &memory, lon_lat(0.0, 0.0));
         (rect, memory, projector)
     }

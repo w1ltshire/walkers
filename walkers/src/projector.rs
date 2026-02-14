@@ -96,7 +96,7 @@ mod tests {
         let original = lon_lat(21., 52.);
 
         let mut map_memory = MapMemory::default();
-        map_memory.set_zoom(18.).unwrap();
+        map_memory.set_zoom(18.);
 
         let projector = Projector::new(
             Rect::from_min_size(Pos2::ZERO, Vec2::splat(100.)),
@@ -137,7 +137,7 @@ mod tests {
         let original = lon_lat(21., 52.);
 
         let mut map_memory = MapMemory::default();
-        map_memory.set_zoom(10.).unwrap();
+        map_memory.set_zoom(10.);
 
         let projector = Projector::new(
             Rect::from_min_size(Pos2::ZERO, Vec2::splat(100.)),

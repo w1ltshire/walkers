@@ -10,7 +10,7 @@ const INERTIA_TAU: f32 = 0.2f32;
 /// [`Center::MyPosition`].
 #[derive(Debug, Clone, PartialEq, Default)]
 #[cfg_attr(feature = "serde", derive(::serde::Serialize, ::serde::Deserialize))]
-pub(crate) enum Center {
+pub enum Center {
     /// Centered at `my_position` argument of the [`Map::new()`] function.
     #[default]
     MyPosition,

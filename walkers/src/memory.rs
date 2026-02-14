@@ -1,4 +1,4 @@
-use crate::{Position, center::Center, position::AdjustedPosition, zoom::Zoom};
+use crate::{InvalidZoom, Position, center::Center, position::AdjustedPosition, zoom::Zoom};
 
 /// State of the map widget which must persist between frames.
 #[derive(Debug, Default, Clone)]
@@ -10,18 +10,19 @@ pub struct MapMemory {
 
 impl MapMemory {
     /// Try to zoom in, returning `Err(InvalidZoom)` if already at maximum.
-    pub fn zoom_in(&mut self) {
-        self.zoom.zoom_in();
+    pub fn zoom_in(&mut self) -> Result<(), InvalidZoom> {
+        self.zoom.zoom_in()
     }
 
     /// Try to zoom out, returning `Err(InvalidZoom)` if already at minimum.
-    pub fn zoom_out(&mut self) {
-        self.zoom.zoom_out();
+    pub fn zoom_out(&mut self) -> Result<(), InvalidZoom> {
+        self.zoom.zoom_out()
     }
 
     /// Set exact zoom level
-    pub fn set_zoom(&mut self, zoom: f64) {
-        self.zoom = Zoom::from(zoom);
+    pub fn set_zoom(&mut self, zoom: f64) -> Result<(), InvalidZoom> {
+        self.zoom = Zoom::try_from(zoom)?;
+        Ok(())
     }
 
     /// Returns the current zoom level

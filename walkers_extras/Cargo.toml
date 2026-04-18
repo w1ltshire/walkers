@@ -20,4 +20,4 @@ lyon_tessellation = "1.0"
 quick-xml = "0.39"
 rstar = "0.12"
 thiserror = "2"
-walkers = { workspace = true, features = ["mvt"] }
+walkers = { workspace = true }

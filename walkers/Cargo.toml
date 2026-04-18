@@ -26,7 +26,6 @@ log.workspace = true
 lru = "0.16"
 lyon_path = { version = "1", optional = true }
 lyon_tessellation = { version = "1", optional = true }
-mvt-reader = { version = "2.1.0", optional = true }
 pmtiles = { version = "0.21.0", default-features = false, features = [
   "mmap-async-tokio",
 ], optional = true }
@@ -59,7 +58,6 @@ mvt = [
   "dep:geo",
   "dep:lyon_path",
   "dep:lyon_tessellation",
-  "dep:mvt-reader",
   "dep:serde",
   "dep:serde_json"
 ]
